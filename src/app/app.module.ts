@@ -2,10 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { OperationNumberComponent } from './operation-number/operation-number.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    OperationNumberComponent
   ],
   imports: [
     BrowserModule
