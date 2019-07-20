@@ -12,7 +12,7 @@ export class OperationNumberComponent implements OnInit {
 
   generatedNumber: string = '0';
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     this.randomizeOperationNumber();
@@ -20,7 +20,7 @@ export class OperationNumberComponent implements OnInit {
 
   randomizeOperationNumber() {
 
-    this.generatedNumber = this.randomNumberString(8);
+    this.generatedNumber = this.randomNumberString(7);
   }
 
   randomNumberString(length: number): string {
@@ -32,8 +32,8 @@ export class OperationNumberComponent implements OnInit {
       numbers.push(Math.floor(Math.random() * 10))
     }
 
-    numbers.forEach((number: number) => {
-      crossFootSum += this.calculateCrossSum(2 * number);
+    numbers.forEach((number: number, index: number) => {
+      crossFootSum += index % 2 == 0 ? number : this.calculateCrossSum(2 * number);
     });
 
     crossFootSum = Math.floor(crossFootSum);
